@@ -1,0 +1,30 @@
+<!-- <html x-ng-app>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="TTT.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<script src="TTT.js"></script>
+</head>
+<body x-ng-controller"" x-ng-init="rows = [ [1,2,3],[4,5,6],[7,8,9] ]; num = 5;">
+<div class="board">
+          <div class="cell" x-ng-repeat="c in cells track by $index"></div>
+        </div>
+</body>
+</html>
+ -->
+
+<!DOCTYPE html>
+<html x-ng-app="tptApp">
+<head>
+	<link rel="stylesheet" type="text/css" href="TTT.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<script src="TTT.js"></script>
+</head>
+<body x-ng-controller="TptController">
+	<div id="board">
+		<div class="cell" x-ng-repeat="c in cells track by $index" x-ng-click = "makeMove($index);">
+			{{c}}
+		</div>
+	</div>
+</body>
+</html>
