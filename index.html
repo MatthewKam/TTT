@@ -7,7 +7,12 @@
 	<script src="TTT.js"></script>
 </head>
 <body x-ng-controller="TttController">
-	<div id="logo"><img src=""></div>
+	<div id="logo"><img src="img/958374_orig.png"></div>
+<div class="outro">
+	<div id="Don"></div>
+	<div id="Mic"></div>
+	<div id="Leo"></div>
+	<div id="Rap"></div>
 	<div id="board">
 		<div class="cell" x-ng-repeat="c in cells track by $index" x-ng-click = "makeMove($index);">
 			<div>
@@ -15,5 +20,7 @@
 			</div>
 		</div>
 	</div>
+	<img src="img/leo3302012.jpg" x-ng-click="newGame()">
+</div>
 </body>
 </html>
