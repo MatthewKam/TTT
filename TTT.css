@@ -8,8 +8,11 @@ body {
 	height:800px;
 	margin:0 auto;
 }
-img{
+#logo img{
+	margin-top: 100px;
+	margin-bottom:-150px;
 	width:500px;
+
 }
 #board {
 	margin: 0 auto;
@@ -17,7 +20,6 @@ img{
 	width: 493px;
 	height: 493px;
 	padding: 4px;
-
 }
 .cell {
 	width: 150px;
@@ -41,11 +43,11 @@ img{
 	display:inline-block;
 	height:600px;
 	width:1300px;
+	margin-top:-20px;
 }
-
 #Don{
 	background-color: black;
-	background-image: url("img/POdon.gif");
+	background-image: url("img/POdon.gif.svg");
  	width:150px;
  	height:500px;
  	border:solid white;
@@ -58,10 +60,11 @@ img{
 }
 #Don:hover{
 	background-color:#7081BE;
+
 }
 #Mic{
 	background-color: black;
-	background-image: url("img/POmic.gif");
+	background-image: url("img/POmic.gif.svg");
 	width:150px;
  	height:500px;
  	border:solid white;
@@ -73,10 +76,11 @@ img{
 }
 #Mic:hover{
 	background-color:#F79B20;
+
 }
 #Leo{
 	background-color: black;
-	background-image: url("img/POleo.gif");
+	background-image: url("img/POleo.gif.svg");
 	width:150px;
  	height:500px;
  	border:solid white;
@@ -88,10 +92,11 @@ img{
 }
 #Leo:hover{
 	background-color:#1588C8;
+
 }
 #Rap{
 	background-color: black;
-	background-image: url("img/POrap.gif");
+	background-image: url("img/POrap.gif.svg");
 	width:150px;
  	height:500px;
  	border:solid white;
@@ -103,7 +108,59 @@ img{
 }
 #Rap:hover{
 	background-color:#E1393F;
+
 }
+#newGame{
+	background-image:url("img/newgame.svg");
+	width:500px;
+	height:50px;
+	background-repeat:no-repeat;
+	margin-left: 525px;
+	margin-top:15px;
+	margin-bottom: 0px;
+}
+#newGame:hover{
+	background-image: url("img/newgame2.svg");
+	text-align: center;
 
-
+}
+#tie{	
+	width:500px;
+	height:500px;
+	margin-left:400px;
+	position:absolute;
+	top: 350px;
+}
+#player1 {
+	display:inline-block;
+	position:absolute;
+	width:400px;
+	height:400px;
+	top:200px;
+	margin-left: -190px;
+}
+#player1 img:first-child{
+	margin-bottom:30px;
+}
+#player2{
+	display:inline-block;
+	position:absolute;
+	width:400px;
+	height:400px;
+	top:200px;
+	margin-left: -190px;
+}
+#player2 img:first-child{
+	margin-bottom:30px;
+}
+.header{
+	width:1250px;
+	margin:0 auto;
+}
+#p1{
+	float:left;
+}
+#p2{
+	float:right;
+}
 

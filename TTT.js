@@ -4,7 +4,8 @@ tttAppl.controller('TttController', function ($scope) {
 	$scope.isXTurn = true;
 	$scope.moveCount = 0;
 	$scope.gameWinner = false;
-	
+	$scope.gameWinner2 = false;
+	$scope.tieGame = false;
 	$scope.changeVar = function(c){
 		if (c == -1){
 			return "O";
@@ -15,13 +16,15 @@ tttAppl.controller('TttController', function ($scope) {
 	$scope.newGame = function(newGame){
 		$scope.moveCount = 0;
 		$scope.gameWinner = false;
+		$scope.gameWinner2 = false;
+		$scope.tieGame = false;
 		$scope.isXturn = true;
 		for (var i = 0; i < 9; i++){
 			$scope.cells[i] = 0;
 		}
 	}
 	$scope.makeMove = function (cellindex) {
-		if($scope.cells[cellindex]== 0 && !$scope.gameWinner){
+		if($scope.cells[cellindex]== 0 && !$scope.gameWinner && !$scope.gameWinner2 && !$scope.tieGame){
 			$scope.cells[cellindex] = $scope.isXTurn ? 1 : -1;
 			$scope.moveCount++;
 			console.log($scope.moveCount);
@@ -29,67 +32,55 @@ tttAppl.controller('TttController', function ($scope) {
 			
 
 			if(($scope.cells[0] + $scope.cells[1] + $scope.cells[2]) == 3){
-				alert("Player 1 wins!");
 				$scope.gameWinner = true;
 			}else if(($scope.cells[0] + $scope.cells[1] + $scope.cells[2]) == -3){
-				alert("Player 2 wins!");
-				$scope.gameWinner = true;
+				$scope.gameWinner2 = true;
 			};
 
 			if(($scope.cells[3] + $scope.cells[4] + $scope.cells[5]) == 3){
-				alert("Player 1 wins!");
 				$scope.gameWinner = true;
 			}else if(($scope.cells[3] + $scope.cells[4] + $scope.cells[5]) == -3){
-				alert("Player 2 wins!");
-				$scope.gameWinner = true;
+				$scope.gameWinner2 = true;
 			};
 
 			if(($scope.cells[6] + $scope.cells[7] + $scope.cells[8]) == 3){
-				alert("Player 1 wins!");
 				$scope.gameWinner = true;
 			}else if(($scope.cells[6] + $scope.cells[7] + $scope.cells[8]) == -3){
-				alert("Player 2 wins!");
-				$scope.gameWinner = true;
+				$scope.gameWinner2 = true;
 			};
 
 			if(($scope.cells[0] + $scope.cells[3] + $scope.cells[6]) == 3){
-				alert("Player 1 wins!");
 				$scope.gameWinner = true;
 			}else if(($scope.cells[0] + $scope.cells[3] + $scope.cells[6]) == -3){
-				alert("Player 2 wins!");
-				$scope.gameWinner = true;
+				$scope.gameWinner2 = true;
 			};
+
 			if(($scope.cells[1] + $scope.cells[4] + $scope.cells[7]) == 3){
-				alert("Player 1 wins!");
 				$scope.gameWinner = true;
 			}else if(($scope.cells[1] + $scope.cells[4] + $scope.cells[7]) == -3){
-				alert("Player 2 wins!");
-				$scope.gameWinner = true;
+				$scope.gameWinner2 = true;
 			};
+
 			if(($scope.cells[2] + $scope.cells[5] + $scope.cells[8]) == 3){
-				alert("Player 1 wins!");
 				$scope.gameWinner = true;
 			}else if(($scope.cells[2] + $scope.cells[5] + $scope.cells[8]) == -3){
-				alert("Player 2 wins!");
-				$scope.gameWinner = true;
+				$scope.gameWinner2 = true;
 			};
+
 			if(($scope.cells[0] + $scope.cells[4] + $scope.cells[8]) == 3){
-				alert("Player 1 wins!");
 				$scope.gameWinner = true;
 			}else if(($scope.cells[0] + $scope.cells[4] + $scope.cells[8]) == -3){
-				alert("Player 2 wins!");
-				$scope.gameWinner = true;
+				$scope.gameWinner2 = true;
 			};
+
 			if(($scope.cells[2] + $scope.cells[4] + $scope.cells[6]) == 3){
-				alert("Player 1 wins!");
 				$scope.gameWinner = true;
 			}else if(($scope.cells[2] + $scope.cells[4] + $scope.cells[6]) == -3){
-				alert("Player 2 wins!");
-				$scope.gameWinner = true;
+				$scope.gameWinner2 = true;
 			};
 			
-			if ($scope.moveCount == 0 && $scope.gameWinner==false){
-				alert("There are no winners in battle...");
+			if ($scope.moveCount==9 && $scope.gameWinner==false && $scope.gameWinner2==false){
+				$scope.tieGame = true;
 			};
 		};
 	};
