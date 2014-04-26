@@ -4,6 +4,8 @@
 	<title>Turtle Power!</title>
 	<link rel="stylesheet" type="text/css" href="TTT.css">
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<script src="https://cdn.firebase.com/v0/firebase.js"></script>
+	<script src="https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.min.js"></script>
 	<script src="TTT.js"></script>
 </head>
 <body x-ng-controller="TttController">
@@ -11,41 +13,37 @@
 		<div id="logo">
 			<img src="img/958374_orig.png">
 		</div>
-		<div id="p1" x-ng-show="moveCount%2==0">
-			<img src="img/p1turn.svg">
+		<div id="p1" >
+			<img src="img/p1turn.svg" x-ng-show="game.moveCount%2==0">
 		</div>
-		<div id="p2" x-ng-hide="moveCount%2==0">
-			<img src="img/p2turn.svg">
+		<div id="p2" >
+			<img src="img/p2turn.svg" x-ng-show="game.moveCount%2==1">
 		</div>
-
 	</div>
 	<div class="outro">
-	
 		<div id="Don" x-ng-click="playerChoice"></div>
 		<div id="Mic" x-ng-click="playerChoice"></div>
 		<div id="Leo" x-ng-click="playerChoice"></div>
 		<div id="Rap" x-ng-click="playerChoice"></div>
 		<div id="board">
-			<div class="cell" x-ng-repeat="c in cells track by $index" x-ng-click="makeMove($index)">
-				<div>
-					{{changeVar(c)}}
-				</div>
+			<div class="cell" x-ng-class="{X:c === 1, O:c === -1}" x-ng-repeat="c in game.cells track by $index" x-ng-click="makeMove($index)">
 			</div>
 		</div>
- 		<div id="tie" x-ng-show="tieGame">
+ 		<div id="tie" x-ng-show="game.tieGame">
+ 			<img src="img/tie.svg">
  			<img src="img/splinter.svg">
  		</div>
-		<div id="player1" x-ng-show="gameWinner">
+		<div id="player1" x-ng-show="game.gameWinner">
 			<img x-ng-src="img/p1wins.svg">
 			<img x-ng-src="img/tumblr_mmzvm6zpHl1soog04o1_500.gif">
 		</div>
-		<div id="player2" x-ng-show="gameWinner2">
+		<div id="player2" x-ng-show="game.gameWinner2">
 			<img x-ng-src="img/p2wins.svg">
 			<img x-ng-src="img/tumblr_mmzvm6zpHl1soog04o1_500.gif">
 		</div>
-		<div id="newGame" x-ng-hide="gameWinner==false" x-ng-click="newGame()" ></div>
-		<div id="newGame" x-ng-hide="gameWinner2==false" x-ng-click="newGame()" ></div>
-		<div id="newGame" x-ng-hide="tieGame==false" x-ng-click="newGame()" ></div>
+		<div id="newGame" x-ng-hide="game.gameWinner!=true" x-ng-click="newGame();" ></div>
+		<div id="newGame" x-ng-hide="game.gameWinner2!=true" x-ng-click="newGame();" ></div>
+		<div id="newGame" x-ng-hide="game.tieGame!=true" x-ng-click="newGame();" ></div>
 </div>
 </body>
 </html>

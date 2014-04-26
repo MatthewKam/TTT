@@ -37,7 +37,7 @@ body {
 	background-size: 85%;
 	background-repeat: no-repeat;
 	background-color: #007F00;
-	border-radius:50px ;
+	border-radius:50px;
 }
 .outro{
 	display:inline-block;
@@ -60,7 +60,6 @@ body {
 }
 #Don:hover{
 	background-color:#7081BE;
-
 }
 #Mic{
 	background-color: black;
@@ -76,7 +75,6 @@ body {
 }
 #Mic:hover{
 	background-color:#F79B20;
-
 }
 #Leo{
 	background-color: black;
@@ -108,7 +106,6 @@ body {
 }
 #Rap:hover{
 	background-color:#E1393F;
-
 }
 #newGame{
 	background-image:url("img/newgame.svg");
@@ -129,7 +126,10 @@ body {
 	height:500px;
 	margin-left:400px;
 	position:absolute;
-	top: 350px;
+	top: 185px;
+}
+#tie img:first-child{
+	margin-bottom:10px;
 }
 #player1 {
 	display:inline-block;
@@ -140,7 +140,7 @@ body {
 	margin-left: -190px;
 }
 #player1 img:first-child{
-	margin-bottom:30px;
+	margin-bottom:25px;
 }
 #player2{
 	display:inline-block;
@@ -151,16 +151,29 @@ body {
 	margin-left: -190px;
 }
 #player2 img:first-child{
-	margin-bottom:30px;
+	margin-bottom:25px;
 }
 .header{
 	width:1250px;
 	margin:0 auto;
 }
 #p1{
+	height: 200px;
 	float:left;
+	margin-left:60px;
 }
 #p2{
+	height: 200px;
 	float:right;
+	margin-right:60px;
 }
+.X{
+	background-image:url("img/X.svg");
+	background-size:cover;
+}
+.O{
+	background-image: url("img/O.svg");
+	background-size:cover;
+}
+
 
